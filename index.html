@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Instagram Photo Feed</title>
+
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
+
+</head>
+
+<body class="bg-light">
+
+    <nav class="navbar navbar-expand-lg bg-white border-bottom px-4">
+        <div class="container-fluid">
+            <span class="navbar-brand fw-bold">
+                <i class="bi bi-instagram"></i> Instagram
+            </span>
+
+            <div class="ms-auto d-flex gap-2">
+                <button class="btn btn-success" data-bs-toggle="modal" data-bs-target="#createModal">
+                    Create a new post
+                </button>
+
+                <div class="dropdown">
+                    <button class="btn btn-secondary dropdown-toggle" data-bs-toggle="dropdown">
+                        <i class="bi bi-gear"></i>
+                    </button>
+                    <ul class="dropdown-menu dropdown-menu-end">
+                        <li><a class="dropdown-item" href="#">Profile</a></li>
+                        <li><a class="dropdown-item" href="#">Settings</a></li>
+                        <li><a class="dropdown-item text-danger" href="#">Log out</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+
+    <div class="text-center my-4">
+        <button id="gridBtn" class="btn btn-outline-secondary me-2 active" onclick="showGrid()">
+            <i class="bi bi-grid-3x3"></i>
+        </button>
+        <button id="listBtn" class="btn btn-outline-secondary" onclick="showList()">
+            <i class="bi bi-square-fill"></i>
+        </button>
+    </div>
+
+    <div class="container" id="gridView">
+        <div class="row g-2">
+
+
+            <div class="col-4">
+                <div class="ratio ratio-1x1">
+                    <img src="https://images.unsplash.com/photo-1507149833265-60c372daea22"
+                        class="img-fluid object-fit-cover">
+                </div>
+            </div>
+
+            <div class="col-4">
+                <div class="ratio ratio-1x1">
+                    <img src="https://images.unsplash.com/photo-1492724441997-5dc865305da7"
+                        class="img-fluid object-fit-cover">
+                </div>
+            </div>
+
+            <div class="col-4">
+                <div class="ratio ratio-1x1">
+                    <img src="https://images.unsplash.com/photo-1500534623283-312aade485b7"
+                        class="img-fluid object-fit-cover">
+                </div>
+            </div>
+
+            <div class="col-4">
+                <div class="ratio ratio-1x1">
+                    <img src="https://images.unsplash.com/photo-1500534314209-a25ddb2bd429"
+                        class="img-fluid object-fit-cover">
+                </div>
+            </div>
+
+            <div class="col-4">
+                <div class="ratio ratio-1x1">
+                    <img src="https://images.unsplash.com/photo-1499856871958-5b9627545d1a"
+                        class="img-fluid object-fit-cover">
+                </div>
+            </div>
+
+            <div class="col-4">
+                <div class="ratio ratio-1x1">
+                    <img src="https://images.unsplash.com/photo-1470770841072-f978cf4d019e"
+                        class="img-fluid object-fit-cover">
+                </div>
+            </div>
+
+            <div class="col-4">
+                <div class="ratio ratio-1x1">
+                    <img src="https://images.unsplash.com/photo-1505761671935-60b3a7427bad"
+                        class="img-fluid object-fit-cover">
+                </div>
+            </div>
+
+            <div class="col-4">
+                <div class="ratio ratio-1x1">
+                    <img src="https://images.unsplash.com/photo-1501785888041-af3ef285b470"
+                        class="img-fluid object-fit-cover">
+                </div>
+            </div>
+
+            <div class="col-4">
+                <div class="ratio ratio-1x1">
+                    <img src="https://images.unsplash.com/photo-1482192596544-9eb780fc7f66"
+                        class="img-fluid object-fit-cover">
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+    <div class="container d-none" id="listView">
+
+        <div class="card mb-4 mx-auto" style="max-width:600px;">
+            <div class="card-header d-flex justify-content-between">
+                <strong>My Crazy dog Spark!</strong>
+                <span class="text-muted">08/26</span>
+            </div>
+            <img src="https://images.unsplash.com/photo-1507149833265-60c372daea22" class="img-fluid">
+            <div class="card-body">
+                <strong>204 Likes</strong>
+                <p class="mb-0">This is an example of a very good photo that you can post on instagram</p>
+            </div>
+        </div>
+
+        <div class="card mb-4 mx-auto" style="max-width:600px;">
+            <div class="card-header d-flex justify-content-between">
+                <strong>Beach Day</strong>
+                <span class="text-muted">09/02</span>
+            </div>
+            <img src="https://images.unsplash.com/photo-1492724441997-5dc865305da7" class="img-fluid">
+            <div class="card-body">
+                <strong>350 Likes</strong>
+                <p class="mb-0">Enjoying the summer vibes 🌞</p>
+            </div>
+        </div>
+
+        <div class="card mb-4 mx-auto" style="max-width:600px;">
+            <div class="card-header d-flex justify-content-between">
+                <strong>Mountain Trip</strong>
+                <span class="text-muted">09/10</span>
+            </div>
+            <img src="https://images.unsplash.com/photo-1500534314209-a25ddb2bd429" class="img-fluid">
+            <div class="card-body">
+                <strong>512 Likes</strong>
+                <p class="mb-0">Chasing mountains and fresh air 🏔</p>
+            </div>
+        </div>
+
+    </div>
+
+
+    <div class="modal fade" id="createModal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Create a new post</h5>
+                    <button class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <textarea class="form-control" placeholder="Write a caption..."></textarea>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button class="btn btn-success">Publish</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        function showGrid() {
+            document.getElementById("gridView").classList.remove("d-none");
+            document.getElementById("listView").classList.add("d-none");
+
+            document.getElementById("gridBtn").classList.add("active");
+            document.getElementById("listBtn").classList.remove("active");
+        }
+
+        function showList() {
+            document.getElementById("gridView").classList.add("d-none");
+            document.getElementById("listView").classList.remove("d-none");
+
+            document.getElementById("gridBtn").classList.remove("active");
+            document.getElementById("listBtn").classList.add("active");
+        }
+    </script>
+
+</body>
+
+</html>
